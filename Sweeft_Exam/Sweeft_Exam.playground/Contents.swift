@@ -46,12 +46,15 @@ struct Stack {
     private var items:[String] = []
     
     mutating func pop() -> String {
+        guard items.count > 0 else {return ""}
         return items.removeFirst()
     }
     mutating func push (_ element:String) {
+        guard items.count > 0 else {return ""}
         items.insert(element, at: 0)
     }
     func size() -> Int {
+        guard items.count > 0 else {return ""}
         return items.count
     }
 }
